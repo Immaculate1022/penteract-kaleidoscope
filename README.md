@@ -2,39 +2,35 @@
 
 **Infinite Recursive 5D Fractal**
 
-Each vertex of a penteract (5-dimensional hypercube) contains a complete copy of itself, ad infinitum.
+Each vertex of a penteract (5-dimensional hypercube) contains a complete smaller copy of itself, ad infinitum.
 
-## Features
+## Live Demo
 
-- Recursive vertex generation with scale factor
-- Kaleidoscopic rotation: each level rotates in different 5D planes using PHI-harmonic angles
-- Depth-based perspective warping and fractal zoom
-- Recursive edge generation connecting corresponding vertices across depths
-- Canvas rendering with depth cues, glowing points, and hsla color based on depth/position
+Open **[index.html](index.html)** in any modern browser — fully self-contained, no dependencies.
 
-## Usage
+Controls:
+- **Depth** (0–3) — recursion level (depth 3 = 32³ = 32 768 points)
+- **Speed** — rotation speed
+- **Scale** — zoom
+- Pause / Reset
 
-This module depends on a `PenteractEngine` (not included here) that provides:
+## What’s inside
 
-- `generateVertices()`
-- `generateEdges()`
-- `rotate(vertices, angles)`
-- `project(v5, factor)`
-
-```js
-import { KaleidoscopeEngine, PenteractKaleidoscope } from './KaleidoscopeEngine.js';
-
-const canvas = document.getElementById('canvas');
-const kaleido = new PenteractKaleidoscope(canvas, 3); // maxDepth = 3
-kaleido.start();
-```
+- `PenteractEngine` — generates the 32 vertices & edges of a 5-cube, performs 10-plane 5D rotations, and projects 5D → 2D through successive perspective steps.
+- `KaleidoscopeEngine` — recursive nesting, PHI-harmonic multi-level rotations, depth-colored glowing rendering.
+- Single-file HTML demo with live controls.
 
 ## Notes
 
-- Depth defaults to 3 (32^3 = 32,768 vertices at deepest level — use carefully).
-- PHI = (1 + √5) / 2 drives harmonic rotations and scaling.
-- Designed for browser Canvas 2D context.
+- Depth 3 is already computationally heavy; higher values will lag most machines.
+- PHI = (1 + √5)/2 drives the harmonic rotation frequencies and scaling.
+- Pure Canvas 2D — works offline.
 
-## License
+## Files
 
-See repository license.
+| File | Description |
+|------|-------------|
+| `index.html` | Complete runnable demo |
+| `KaleidoscopeEngine.js` | Original modular engine (requires PenteractEngine) |
+
+Enjoy the infinite mirrors.
