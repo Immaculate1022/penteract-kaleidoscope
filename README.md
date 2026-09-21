@@ -30,7 +30,6 @@ Controls:
 
 | File | Description |
 |------|-------------|
-| `index.html` | Complete runnable demo |
-| `KaleidoscopeEngine.js` | Original modular engine (requires PenteractEngine) |
+| `index.html` | Complete runnable demo (self-contained — both engines are inlined) |
 
 Enjoy the infinite mirrors.
